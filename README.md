@@ -1,111 +1,389 @@
-# Real-Time Audio Fraud Detection for Scam Prevention
-  
-With the rapid rise of voice-based scams, fraudsters increasingly exploit phone calls to deceive
-users. Particularly vulnerable groups such as elderly individuals, digitally unaware users, and first-
-time internet adopters. These scams often involve impersonation, emotional manipulation, urgency
-tactics, and psychological pressure, making them difficult to detect in real time.
-Traditional fraud detection systems primarily focus on post-transaction analysis or text-based
-signals, offering little to no protection during live phone conversations, where most financial and
-emotional damage occurs.
-There is a critical need for an AI-powered, real-time audio intelligence system that can detect scam
-patterns as a call is happening and proactively protect users before fraud occurs.
-Objective
-Develop an innovative AI-driven solution that leverages real-time audio analysis and fraud detection
-to:
-Identify scam or fraudulent phone calls as they occur
-Protect user. Especially elderly and vulnerable populations from financial and emotional harm
-Provide timely alerts, guidance, or interventions during suspicious calls
+# FraudShield AI — Real-Time Audio Fraud Detection
 
-**Project Name**
+FraudShield AI is an AI-powered system designed to detect potential scams and fraudulent activity in phone conversations. It processes call audio, converts speech into text, analyzes conversational patterns for potential fraud indicators, and generates a risk assessment with clear user guidance.
 
-FraudShield AI – Real-Time Audio Fraud Detection System
+The system is designed with a particular focus on elderly and digitally vulnerable users who may be targeted through impersonation, urgency, emotional manipulation, and financial scams.
 
-**Team Name**
+---
 
-Quantuam Triplets
+## Overview
 
-**2-Minute Demonstration Video Link**
+Voice-based scams often rely on psychological pressure rather than technical vulnerabilities. Attackers may impersonate trusted organizations, create a sense of urgency, request sensitive information, or pressure users into making financial transactions.
 
-https://drive.google.com/drive/folders/1zCiCkipwlw5AVKhTgxsC37QswGV_G-93
+FraudShield AI aims to provide an additional layer of protection by analyzing conversational content and identifying patterns commonly associated with fraudulent calls.
 
-**PPT Link**
+### Detection Pipeline
 
-https://drive.google.com/drive/folders/1eTBdj0EPhbLvDjWOyN9QAo4473PbdeIP
+```text
+Call Audio
+    ↓
+Speech-to-Text
+    ↓
+Conversation Analysis
+    ↓
+Fraud Indicator Detection
+    ↓
+Risk Assessment
+    ↓
+Alert and Guidance
+```
 
-# Project Overview
+---
 
-FraudShield AI is an AI-driven application designed to detect fraudulent phone calls in real time using live audio analysis. Unlike traditional systems that act after damage is done, FraudShield AI actively monitors ongoing calls, identifies scam patterns, and alerts users instantly.
+## Features
 
-The system is built with a strong focus on elderly and vulnerable users, featuring an Elder Mode for enhanced accessibility, simplified UI, and clear alerts. The solution combines real-time speech-to-text processing with intelligent fraud pattern detection to provide proactive protection against financial and emotional exploitation.
+* Real-time audio fraud detection workflow
+* Speech-to-text conversion for call conversations
+* AI-powered conversation analysis
+* Detection of potential scam and fraud indicators
+* Fraud risk assessment
+* Clear explanations for detected risk factors
+* Elder Mode with a simplified, accessibility-focused interface
+* REST API-based frontend and backend communication
 
-## Setup & Installation Instructions
+---
+
+## Scam Indicators
+
+The system can analyze conversations for patterns such as:
+
+* Impersonation of banks, government organizations, or trusted entities
+* Requests for OTPs, passwords, PINs, or financial information
+* Urgency and psychological pressure
+* Threats involving account suspension or legal action
+* Suspicious payment requests
+* Emotional manipulation
+* Other potentially fraudulent conversational patterns
+
+---
+
+## Tech Stack
 
 ### Frontend
 
-```bash
-Navigate to the frontend folder:
+* React
+* TypeScript
+* Tailwind CSS
+* Vite
 
-cd frontend
+### Backend
 
+* Python
+* FastAPI
+* Uvicorn
 
-Install dependencies:
+### AI and Processing
 
-npm install
+* Speech-to-Text
+* AI-based conversation analysis
+* Fraud pattern detection
 
+### Communication
 
-Run the application:
+* REST APIs
 
-npm run dev
+---
 
+## Project Structure
 
-Open the browser at:
-
-http://localhost:3000
-
-
-Backend
-
-Navigate to the backend folder:
-
-cd backend
-
-
-Install dependencies:
-
-npm install
-
-
-Start the backend server:
-
-node server.js
-
-
-Backend runs at:
-
-http://localhost:5000
+```text
+FraudShieldAI/
+│
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── api.py
+│   │   └── schemas.py
+│   │
+│   ├── requirements.txt
+│   └── ...
+│
+├── src/
+│   ├── ...
+│
+├── public/
+│   └── ...
+│
+├── package.json
+├── vite.config.ts
+├── README.md
+└── .gitignore
 ```
-# Usage Instructions
 
-Open the application and land on the Home Page.
+---
 
-Enable Elder Mode if required for improved accessibility.
+# Installation
 
-Navigate to the Live Detection Page.
+## Prerequisites
 
-Start or simulate a phone call.
+Make sure the following are installed:
 
-The system analyzes the call audio in real time.
+* Python 3.10+
+* Node.js
+* npm
+* Git
 
-If suspicious patterns are detected, the user receives an immediate fraud alert with guidance.
+Verify the installations:
 
-Clicking on the FraudShield AI header navigates back to the Home Page at any time.
+```bash
+python --version
+node --version
+npm --version
+git --version
+```
 
-**Relevant Screenshots**
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b1aea92e-61bc-4601-bd74-0c704827686e" />
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/6788fa11-36a4-4fcb-a3f9-1a605050bae7" />
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b987f77e-bb36-407c-96e2-327a6cb2ee5d" />
-<img width="1920" height="1080" alt="Screenshot (477) (1)" src="https://github.com/user-attachments/assets/34720d59-20b7-4a3c-85a0-4278a68a4c90" />
-<img width="1920" height="1080" alt="Screenshot (478) (1)" src="https://github.com/user-attachments/assets/06b64624-3dc5-437b-8c5d-9b8ea663715e" />
+---
 
+## 1. Clone the Repository
 
+Clone the repository and navigate into the project directory:
 
+```bash
+git clone https://github.com/IshitaaMohapatraa/FraudShieldAI.git
+cd FraudShieldAI
+```
+
+---
+
+# Frontend Setup
+
+The frontend is built using React, TypeScript, Tailwind CSS, and Vite.
+
+## 2. Install Frontend Dependencies
+
+From the project root:
+
+```bash
+npm install
+```
+
+## 3. Start the Frontend
+
+```bash
+npm run dev
+```
+
+Vite will display the local development URL in the terminal.
+
+Typically:
+
+```text
+http://localhost:5173
+```
+
+Open the displayed URL in your browser.
+
+---
+
+# Backend Setup
+
+The backend is built using Python and FastAPI.
+
+## 4. Navigate to the Backend
+
+Open a new terminal and run:
+
+```bash
+cd FraudShieldAI/backend
+```
+
+## 5. Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+## 6. Activate the Virtual Environment
+
+### Windows PowerShell
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### Windows Command Prompt
+
+```cmd
+venv\Scripts\activate
+```
+
+### macOS / Linux
+
+```bash
+source venv/bin/activate
+```
+
+After activation, the terminal should display the virtual environment name.
+
+Example:
+
+```text
+(venv) D:\FraudShieldAI\backend>
+```
+
+---
+
+## 7. Install Backend Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+If `python-multipart` is not already included in the requirements:
+
+```bash
+pip install python-multipart
+```
+
+---
+
+## 8. Start the Backend Server
+
+From the `backend` directory:
+
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+The backend will run at:
+
+```text
+http://127.0.0.1:8000
+```
+
+FastAPI provides interactive API documentation at:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+You can use the `/docs` interface to view and test the available API endpoints.
+
+---
+
+# Environment Variables
+
+If the application requires external AI services or API keys, create a `.env` file inside the backend directory.
+
+Example:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+Never commit API keys or other credentials to GitHub.
+
+Make sure `.env` is included in `.gitignore`:
+
+```gitignore
+.env
+venv/
+venv_tmp/
+venv311/
+__pycache__/
+*.pyc
+```
+
+---
+
+# Running the Application
+
+The frontend and backend need to run simultaneously.
+
+## Terminal 1 — Backend
+
+Navigate to the backend:
+
+```bash
+cd FraudShieldAI/backend
+```
+
+Activate the virtual environment:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+Start the FastAPI server:
+
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+Backend:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+## Terminal 2 — Frontend
+
+From the project root:
+
+```bash
+cd FraudShieldAI
+npm run dev
+```
+
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+Use the URL displayed by Vite if a different port is assigned.
+
+---
+
+# Usage
+
+1. Open the FraudShield AI web application.
+2. Enable Elder Mode if required.
+3. Navigate to the fraud detection interface.
+4. Start or provide a call audio input.
+5. The audio is processed by the backend.
+6. Speech is converted into text.
+7. The conversation is analyzed for potential scam indicators.
+8. Detected indicators are presented to the user.
+9. A risk assessment and appropriate guidance are generated.
+
+---
+
+# API
+
+The backend exposes REST API endpoints through FastAPI.
+
+Once the backend is running, open:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+The Swagger interface allows developers to view and test the available endpoints.
+
+---
+
+# Security Considerations
+
+FraudShield AI is intended as an assistive fraud-prevention and awareness system. Its results should not be considered a definitive guarantee that a call is fraudulent or safe.
+
+Users should never share sensitive information such as:
+
+* OTPs
+* PINs
+* Passwords
+* Banking credentials
+* Card details
+
+with unknown callers based solely on their claims.
+
+---
+
+# Project Objective
+
+FraudShield AI aims to improve protection against voice-based scams by combining audio processing, speech-to-text technology, and AI-based conversation analysis.
+
+The system is designed to identify potential fraud indicators, assess conversational risk, and provide users with clear information that can help them recognize potentially fraudulent calls.
